@@ -18,6 +18,7 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 RUN curl -L https://services.gradle.org/distributions/gradle-2.2.1-bin.zip | bsdtar -xf- -C /opt/
 RUN curl -L http://dl.google.com/android/repository/android-ndk-r11b-linux-x86_64.zip | bsdtar -xf- -C /opt/
+RUN chmod +x -R /opt/
 
 # Install sdk elements
 COPY tools /opt/tools
@@ -26,7 +27,3 @@ RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --force 
 
 # Cleaning
 RUN apt-get clean
-
-# GO to workspace
-RUN mkdir -p /opt/workspace
-WORKDIR /opt/workspace
