@@ -16,8 +16,7 @@ RUN cd /opt && wget --output-document=android-sdk.tgz --quiet http://dl.google.c
 # Setup environment
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-ENV GRADLE_HOME /opt/
-RUN curl -L https://services.gradle.org/distributions/gradle-2.2.1-bin.zip | bsdtar -xf-
+RUN curl -L https://services.gradle.org/distributions/gradle-2.2.1-bin.zip | bsdtar -xf- -C /opt/
 RUN curl -L http://dl.google.com/android/repository/android-ndk-r11b-linux-x86_64.zip | bsdtar -xf- -C /opt/
 
 # Install sdk elements
