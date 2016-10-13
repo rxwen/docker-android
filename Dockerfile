@@ -1,19 +1,13 @@
-FROM ubuntu:14.04
+FROM openjdk:8-jdk-apline
 
 MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 
 ENV ANDROID_SDK_VERSION 24.4.1
 ENV GRADLE_VERSION 2.2.1
 ENV NDK_VERSION r11b
-# Install java8
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:webupd8team/java
-RUN apt-get update
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-RUN apt-get install -y oracle-java8-installer bsdtar
 
 # Install Deps
-RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 python curl make
+RUN apk update && apk add curl libarchive-tools
 
 # Install Android SDK
 RUN curl -L http://dl.google.com/android/android-sdk_r${ANDROID_SDK_VERSION}-linux.tgz | bsdtar -xf- -C /opt/
