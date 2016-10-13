@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-apline
+FROM openjdk:8-jdk-alpine
 
 MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 
