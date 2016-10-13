@@ -6,7 +6,7 @@ It is available on Docker Hub https://registry.hub.docker.com/u/rxwen/android/ .
 Contains:
 
 * Android SDK: r24.4.1
-* Build tools: 19.0.1, 21.1.2, 22.0.1, 23.0.2
+* Build tools: 19.0.1, 21.1.2, 22.0.1, 23.0.2, 23.0.3
 * Android API: 23, 22, 21, 19
 * Support maven repository
 * Google maven repository
