@@ -7,7 +7,7 @@ ENV GRADLE_VERSION 2.2.1
 ENV NDK_VERSION r11b
 
 # Install Deps
-RUN apk update && apk add git curl libarchive-tools expect && mkdir -p /opt/
+RUN apk update && apk add bash git curl libarchive-tools expect && mkdir -p /opt/
 
 # Install Android SDK
 RUN curl -L http://dl.google.com/android/android-sdk_r${ANDROID_SDK_VERSION}-linux.tgz | bsdtar -xf- -C /opt/
