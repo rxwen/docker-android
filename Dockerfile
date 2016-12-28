@@ -21,8 +21,8 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 RUN curl -L https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip | bsdtar -xf- -C /opt/
 RUN curl -L http://dl.google.com/android/repository/android-ndk-${NDK_VERSION}-linux-x86_64.zip | bsdtar -xf- -C /opt/
-RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/loca/bin/repo
-RUN chmod a+x /usr/local/bin/repo
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+RUN chmod a+x /usr/bin/repo
 # make sure applications executable
 RUN chmod +x -R /opt/
 
