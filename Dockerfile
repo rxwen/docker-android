@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 
 ENV ANDROID_SDK_VERSION 24.4.1
-ENV GRADLE_VERSION 2.14.1
+ENV GRADLE_VERSION 3.4.1
 ENV NDK_VERSION r14b
 # Install java8
 RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository -y ppa:webupd8team/java && apt-get update
