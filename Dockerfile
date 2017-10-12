@@ -5,7 +5,7 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 ENV ANDROID_SDK_VERSION 3859397
 
 USER root
-RUN apk update && apk add -f zip unzip curl wget openssl make openssh git
+RUN apk update && apk add -f zip unzip curl wget openssl make openssh git python
 
 # Install Android SDK
 ENV ANDROID_HOME /opt/android-sdk
