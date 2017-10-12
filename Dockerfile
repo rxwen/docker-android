@@ -6,7 +6,7 @@ ENV ANDROID_SDK_VERSION 3859397
 ENV GRADLE_VERSION 3.4.1
 
 USER root
-RUN apt-get update && apt-get install -y zip unzip curl wget openssl make openssh git python libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
+RUN apt-get update && apt-get install -y zip unzip curl wget openssl make openssh-client git python libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
 
 # Install Android SDK
 ENV ANDROID_HOME /opt/android-sdk
