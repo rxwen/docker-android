@@ -40,6 +40,7 @@ RUN sdkmanager \
         "platforms;android-23" \
         "platforms;android-22" \
         "platforms;android-20" \
+        "platforms;android-19" \
         "platforms;android-13" \
         "platforms;android-10" \
         "platforms;android-8"
