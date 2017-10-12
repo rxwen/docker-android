@@ -35,32 +35,22 @@ RUN chmod a+x /usr/bin/repo
 
 # Install sdk components
 RUN yes | sdkmanager --licenses
-RUN sdkmanager --list
 RUN sdkmanager --update --verbose
 RUN sdkmanager \
         "build-tools;19.1.0" \
-        "build-tools;20.0.0" \
-        "build-tools;21.1.2" \
         "build-tools;23.0.3" \
-        "build-tools;24.0.3" \
         "build-tools;25.0.3" \
         "build-tools;26.0.2" \
-        "cmake;3.6.4111459" \
         "extras;android;m2repository" \
         "platform-tools" \
         "platforms;android-26" \
         "platforms;android-25" \
         "platforms;android-23" \
-        "platforms;android-22" \
-        "platforms;android-20" \
         "platforms;android-19" \
-        "platforms;android-13" \
-        "platforms;android-10" \
         "platforms;android-8"
 #"ndk-bundle" \
 # the ndk-bundle vr15b doesn't compile out code, force r14
-RUN wget https://dl.google.com/android/repository/android-ndk-r14b-linux-x86_64.zip \
-        && unzip -q -d ${ANDROID_HOME} androi-ndk-r14b-linux-x86_64.zip \
+RUN wget -q https://dl.google.com/android/repository/android-ndk-r14b-linux-x86_64.zip \
+        && unzip -q -d ${ANDROID_HOME} android-ndk-r14b-linux-x86_64.zip \
         && mv ${ANDROID_HOME}/android-ndk-r14b ${ANDROID_HOME}/ndk-bundle \
-        && rm android-ndk-r14b-linux-x86_64.zip \
-RUN sdkmanager --list
+        && rm android-ndk-r14b-linux-x86_64.zip && sdkmanager --list
