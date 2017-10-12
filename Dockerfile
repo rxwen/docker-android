@@ -47,7 +47,6 @@ RUN sdkmanager \
         "build-tools;26.0.2" \
         "cmake;3.6.4111459" \
         "extras;android;m2repository" \
-        "ndk-bundle" \
         "platform-tools" \
         "platforms;android-26" \
         "platforms;android-25" \
@@ -58,4 +57,10 @@ RUN sdkmanager \
         "platforms;android-13" \
         "platforms;android-10" \
         "platforms;android-8"
+#"ndk-bundle" \
+# the ndk-bundle vr15b doesn't compile out code, force r14
+RUN wget https://dl.google.com/android/repository/android-ndk-r14b-linux-x86_64.zip \
+        && unzip -q -d ${ANDROID_HOME} androi-ndk-r14b-linux-x86_64.zip \
+        && mv ${ANDROID_HOME}/android-ndk-r14b ${ANDROID_HOME}/ndk-bundle \
+        && rm android-ndk-r14b-linux-x86_64.zip \
 RUN sdkmanager --list
