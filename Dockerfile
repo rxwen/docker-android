@@ -7,7 +7,7 @@ ENV GRADLE_VERSION 3.4.1
 ENV GLIBC_VERSION 2.26-r0
 
 USER root
-RUN apk update && apk add -f zip unzip curl wget openssl make openssh git python
+RUN apk update && apk add -f zip unzip curl wget openssl make openssh git python gnupg
 
 # Install glibc for alpine, https://github.com/sgerrand/alpine-pkg-glibc
 RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub \
