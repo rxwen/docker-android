@@ -4,7 +4,6 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 
 ENV ANDROID_SDK_VERSION 3859397
 
-RUN apk update
 RUN apk add -f unzip curl wget openssl make
 
 # Install Android SDK
