@@ -38,13 +38,24 @@ RUN yes | sdkmanager --licenses
 RUN sdkmanager --list
 RUN sdkmanager --update --verbose
 RUN sdkmanager \
+        "build-tools;19.1.0" \
+        "build-tools;20.0.0" \
+        "build-tools;21.1.2" \
         "build-tools;23.0.3" \
+        "build-tools;24.0.3" \
+        "build-tools;25.0.3" \
         "build-tools;26.0.2" \
+        "cmake;3.6.4111459" \
         "extras;android;m2repository" \
         "ndk-bundle" \
         "platform-tools" \
+        "platforms;android-26" \
+        "platforms;android-25" \
         "platforms;android-23" \
         "platforms;android-22" \
         "platforms;android-20" \
-        "platforms;android-19"
+        "platforms;android-19" \
+        "platforms;android-13" \
+        "platforms;android-10" \
+        "platforms;android-8"
 RUN sdkmanager --list
