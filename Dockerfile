@@ -15,7 +15,7 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_
         && unzip -d ${ANDROID_HOME} sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
         && rm sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
 ENV GRADLE_HOME /opt/gradle
-RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
+RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip \
         && unzip -d /opt/ gradle-${GRADLE_VERSION}-bin.zip \
         && mv /opt/gradle-${GRADLE_VERSION} ${GRADLE_HOME} \
         && rm gradle-${GRADLE_VERSION}-bin.zip
