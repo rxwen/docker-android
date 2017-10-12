@@ -5,7 +5,7 @@ MAINTAINER Raymond Wen "rx.wen218@gmail.com"
 ENV ANDROID_SDK_VERSION 3859397
 
 USER root
-RUN apk update && apk add -f zip unzip curl wget openssl make
+RUN apk update && apk add -f zip unzip curl wget openssl make openssh git
 
 # Install Android SDK
 ENV ANDROID_HOME /opt/android-sdk
@@ -21,10 +21,9 @@ RUN chmod a+x /usr/bin/repo
 
 # Install sdk components
 RUN yes | sdkmanager --licenses
-RUN sdkmanager --list --verbose
+RUN sdkmanager --list
 RUN sdkmanager --update --verbose
-RUN sdkmanager --list --verbose
-RUN sdkmanager --verbose \
+RUN sdkmanager \
         "build-tools;19.1.0" \
         "build-tools;20.0.0" \
         "build-tools;21.1.2" \
@@ -36,6 +35,12 @@ RUN sdkmanager --verbose \
         "extras;android;m2repository" \
         "ndk-bundle" \
         "platform-tools" \
-        "platforms;android-23"
-RUN sdkmanager --list --verbose
-RUN find ${ANDROID_HOME}/ndk-bundle
+        "platforms;android-26" \
+        "platforms;android-25" \
+        "platforms;android-23" \
+        "platforms;android-22" \
+        "platforms;android-20" \
+        "platforms;android-13" \
+        "platforms;android-10" \
+        "platforms;android-8"
+RUN sdkmanager --list
