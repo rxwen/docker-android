@@ -29,7 +29,7 @@ RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.
 		&& rm gradle-${GRADLE_VERSION}-bin.zip
 
 # Setup environment
-ENV PATH ${PATH}:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools/bin:${GRADLE_HOME}/bin
+ENV PATH ${PATH}:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools/bin:${ANDROID_HOME}/ndk-bundle:${GRADLE_HOME}/bin
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
 RUN chmod a+x /usr/bin/repo
 
